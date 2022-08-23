@@ -1,0 +1,15 @@
+.textField {
+  width: -webkit-fill-available;
+}
+
+.buttonGrid {
+  text-align: end;
+}
+
+.newTagGridContainer {
+  padding: 0px !important;
+}
+
+.tagsButton {
+  margin-right: 10px;
+}

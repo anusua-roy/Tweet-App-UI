@@ -1,0 +1,8 @@
+.textField {
+  width: -webkit-fill-available;
+}
+
+.buttonGrid {
+  text-align: end;
+  align-self: end;
+}

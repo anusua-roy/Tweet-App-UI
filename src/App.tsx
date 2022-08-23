@@ -1,25 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "@fontsource/roboto";
+import { StyledEngineProvider } from "@mui/material/styles";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { SnackbarProvider } from "notistack";
+import { AppContext } from "./context/AppContext";
+import AppLoginLayout from "./components/app-login-layout/AppLoginLayout";
+import TweetApp from "./components/tweet-app/TweetApp";
+
+const darkTheme = createTheme({
+  palette: {
+    primary: {
+      main: "#2b204f",
+    },
+  },
+});
 
 function App() {
+  const [isUserActive, setIsUserActive] = useState(false);
+  const [user, setUser] = useState({
+    userId: "",
+    firstName: "",
+    lastName: "",
+    username: "",
+    email: "",
+    contact: "",
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <ThemeProvider theme={darkTheme}>
+      <SnackbarProvider>
+        <AppContext.Provider
+          value={{ isUserActive, setIsUserActive, user, setUser }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <StyledEngineProvider injectFirst>
+            {isUserActive ? <TweetApp /> : <AppLoginLayout />}
+          </StyledEngineProvider>
+        </AppContext.Provider>
+      </SnackbarProvider>
+    </ThemeProvider>
   );
 }
 

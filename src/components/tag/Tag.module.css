@@ -1,0 +1,22 @@
+.tagContainer {
+  margin: 0px 5px 5px 0px;
+  padding: 5px;
+  border-radius: 8px;
+  vertical-align: bottom;
+  width: fit-content;
+  display: inline-block;
+}
+
+.tagBgColor {
+  background-color: #e9e3fa;
+}
+
+.tagReplyBgColor {
+  background-color: #c4bed4;
+}
+
+.iconButton {
+  padding: 0px;
+  padding-left: 2px;
+  vertical-align: text-top;
+}
