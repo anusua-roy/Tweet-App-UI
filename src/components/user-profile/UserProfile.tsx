@@ -1,9 +1,10 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
+import styles from "./UserProfile.module.css";
 import { Grid, Typography } from "@mui/material";
 import { ITweetModel, IUserModel } from "../../interfaces/Common.interface";
-import { getAllTweetsByUser } from "../../services/AllTweetsByUser";
-import Tweet from "../tweet/Tweet";
 import { AppContext } from "../../context/AppContext";
+import { getAllTweetsByUser } from "../../services/AllTweetsByUser.service";
+import Tweet from "../tweet/Tweet";
 import NewTweet from "../new-tweet/NewTweet";
 
 interface IUserProfileProps {
@@ -48,14 +49,7 @@ const UserProfile = (props: IUserProfileProps) => {
         </Grid>
       )}
       <Grid item xs={12}>
-        <hr
-          style={{
-            height: 2,
-            marginTop: 20,
-            color: "#2b204f",
-            backgroundColor: "#2b204f",
-          }}
-        />
+        <hr className={styles.hrStyle} />
       </Grid>
       {tweets.map((tweet, index) => {
         return (

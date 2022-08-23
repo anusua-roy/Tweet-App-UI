@@ -11,7 +11,7 @@ import React, { useContext } from "react";
 import { TWEET_DELETED } from "../../constants/Snackbar.constants";
 import { DELETE_TWEET } from "../../constants/Static.constants";
 import { AppContext } from "../../context/AppContext";
-import { deleteTweet } from "../../services/DeleteTweet";
+import { deleteTweet } from "../../services/DeleteTweet.service";
 
 interface IDeleteTweetProps {
   open: boolean;

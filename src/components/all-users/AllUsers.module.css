@@ -1,0 +1,11 @@
+.hrStyle {
+  height: 2px;
+  margin-top: 20px;
+  color: #2b204f;
+  background-color: #2b204f;
+}
+
+.dialogCloseButton {
+  padding: 0px;
+  text-align: end;
+}

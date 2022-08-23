@@ -9,8 +9,9 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
-import { searchUsers } from "../../services/SearchUser.service";
+import { SEARCH_USER } from "../../constants/Static.constants";
 import { IUserModel } from "../../interfaces/Common.interface";
+import { searchUsers } from "../../services/SearchUser.service";
 
 interface ISearchUserProps {
   search: string;
@@ -41,18 +42,18 @@ const SearchUser = (props: ISearchUserProps) => {
       <Grid item sm={10} xs={8}>
         <TextField
           id="search-user"
-          label="Search"
+          label={SEARCH_USER.SEARCH_LABEL}
           variant="outlined"
           className={styles.textFieldContainer}
           InputProps={{
             startAdornment: (
-              <InputAdornment position="start">
+              <InputAdornment position="start" color="primary">
                 <SearchIcon />
               </InputAdornment>
             ),
             endAdornment:
               search !== "" ? (
-                <IconButton onClick={handleClearSearch}>
+                <IconButton onClick={handleClearSearch} color="primary">
                   <CloseIcon />
                 </IconButton>
               ) : null,
@@ -68,7 +69,7 @@ const SearchUser = (props: ISearchUserProps) => {
           size="large"
           onClick={handleSearchClick}
         >
-          {"Search"}
+          {SEARCH_USER.SEARCH_BUTTON}
         </Button>
       </Grid>
     </Grid>

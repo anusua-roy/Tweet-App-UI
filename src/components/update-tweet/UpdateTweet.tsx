@@ -3,7 +3,7 @@ import { Button, Dialog, DialogActions, DialogContent } from "@mui/material";
 import { AppContext } from "../../context/AppContext";
 import NewTweet from "../new-tweet/NewTweet";
 import { ITweetModel } from "../../interfaces/Common.interface";
-import { updateTweet } from "../../services/UpdateTweet";
+import { updateTweet } from "../../services/UpdateTweet.service";
 import { useSnackbar } from "notistack";
 import { UPDATE_TWEET } from "../../constants/Static.constants";
 import {

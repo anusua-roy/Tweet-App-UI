@@ -89,3 +89,9 @@ export const NEW_TAG = {
 export const NEW_REPLY = {
   TEXTFIELD_LABEL: "Reply...",
 };
+
+//Search User page constants
+export const SEARCH_USER = {
+  SEARCH_LABEL: "Search",
+  SEARCH_BUTTON: "Search",
+};

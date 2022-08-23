@@ -1,4 +1,5 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import styles from "./AllUsers.module.css";
 import {
   Dialog,
   DialogContent,
@@ -22,14 +23,13 @@ const AllUsers = () => {
 
   useEffect(() => {
     void fetchAllUsers();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const fetchAllUsers = useCallback(async () => {
+  const fetchAllUsers = async () => {
     const apiData = await getAllUsers();
     setAllUsers(apiData);
     setUsers(apiData);
-  }, []);
+  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -42,8 +42,8 @@ const AllUsers = () => {
   return (
     <Grid container>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle component="div" style={{ padding: 0, textAlign: "end" }}>
-          <IconButton aria-label="close" onClick={handleClose}>
+        <DialogTitle component="div" className={styles.dialogCloseButton}>
+          <IconButton aria-label="close" onClick={handleClose} color="primary">
             <CloseIcon />
           </IconButton>
         </DialogTitle>
@@ -58,14 +58,7 @@ const AllUsers = () => {
         setUsers={setUsers}
       />
       <Grid item xs={12}>
-        <hr
-          style={{
-            height: 2,
-            marginTop: 20,
-            color: "#2b204f",
-            backgroundColor: "#2b204f",
-          }}
-        />
+        <hr className={styles.hrStyle} />
       </Grid>
       {users.map((user, index) => {
         return (
