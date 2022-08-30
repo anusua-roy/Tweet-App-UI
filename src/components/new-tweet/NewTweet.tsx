@@ -75,6 +75,7 @@ const NewTweet = (props: INewTweetModel) => {
         <TextField
           className={styles.textField}
           id="new-post"
+          data-testid="new-post-textfield"
           label={
             isEditable
               ? NEW_TWEET.EDIT_TWEET_TEXTFIELD_LABEL
@@ -106,7 +107,12 @@ const NewTweet = (props: INewTweetModel) => {
       </Grid>
       {!isEditable && (
         <Grid item xs={3} className={styles.buttonGrid}>
-          <Button variant="contained" size={"medium"} onClick={handlePostTweet}>
+          <Button
+            data-testid="new-tweet-post-button"
+            variant="contained"
+            size={"medium"}
+            onClick={handlePostTweet}
+          >
             {NEW_TWEET.POST_BUTTON_TEXT}
           </Button>
         </Grid>

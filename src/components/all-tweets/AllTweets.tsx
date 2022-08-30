@@ -21,7 +21,7 @@ const AllTweets = () => {
 
   return (
     <Grid container>
-      <Grid item xs={12}>
+      <Grid item xs={12} data-testid="new-tweet-container">
         <NewTweet
           refreshTweet={refreshTweet}
           setRefreshTweets={setRefreshTweets}

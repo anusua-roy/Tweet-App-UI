@@ -131,7 +131,7 @@ const RegisterForm = (props: IRegisterFormProps) => {
   };
 
   return (
-    <Dialog open={open} onClose={handleClose}>
+    <Dialog open={open} onClose={handleClose} data-testid="register-dialog">
       <DialogTitle component="div" className={styles.dialogTitle}>
         <Grid container>
           <Grid container item xs={11}>

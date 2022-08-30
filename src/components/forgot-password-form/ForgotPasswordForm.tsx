@@ -87,7 +87,11 @@ const ForgotPasswordForm = (props: IRegisterFormProps) => {
   };
 
   return (
-    <Dialog open={open} onClose={handleClose}>
+    <Dialog
+      open={open}
+      onClose={handleClose}
+      data-testid="forgot-password-dialog"
+    >
       <DialogTitle component="div" className={styles.dialogTitle}>
         <Grid container>
           <Grid container item xs={11}>
@@ -103,7 +107,11 @@ const ForgotPasswordForm = (props: IRegisterFormProps) => {
             </Grid>
           </Grid>
           <Grid item xs={1}>
-            <IconButton aria-label="close" onClick={handleClose}>
+            <IconButton
+              aria-label="close"
+              onClick={handleClose}
+              data-testid="forgot-pwd-close-icon-btn"
+            >
               <CloseIcon />
             </IconButton>
           </Grid>
@@ -119,6 +127,7 @@ const ForgotPasswordForm = (props: IRegisterFormProps) => {
               </InputLabel>
               <OutlinedInput
                 id="username"
+                data-testid="forgot-pwd-username"
                 required
                 type={"text"}
                 value={values.username}
@@ -134,6 +143,7 @@ const ForgotPasswordForm = (props: IRegisterFormProps) => {
               </InputLabel>
               <OutlinedInput
                 id="password"
+                data-testid="forgot-pwd-password"
                 required
                 type={values.showPassword ? "text" : "password"}
                 value={values.password}
@@ -157,7 +167,12 @@ const ForgotPasswordForm = (props: IRegisterFormProps) => {
         </Grid>
       </DialogContent>
       <DialogActions className={styles.dialogActions}>
-        <Button variant="contained" onClick={handleRegistration} size="large">
+        <Button
+          variant="contained"
+          onClick={handleRegistration}
+          size="large"
+          data-testid="forgot-pwd-close-btn"
+        >
           {FORGOT_PASSWORD_FORM.REGISTER_BUTTON}
         </Button>
       </DialogActions>

@@ -98,7 +98,7 @@ const LoginForm = () => {
   };
 
   return (
-    <Card className={styles.card}>
+    <Card className={styles.card} data-testid="login-form">
       <RegisterForm open={open} setOpen={setOpen} />
       <ForgotPassword
         open={openForgotPassword}
@@ -113,6 +113,7 @@ const LoginForm = () => {
               </InputLabel>
               <OutlinedInput
                 id="login-id"
+                data-testid="login-id"
                 required
                 type={"text"}
                 value={values.email}
@@ -128,6 +129,7 @@ const LoginForm = () => {
               </InputLabel>
               <OutlinedInput
                 id="password"
+                data-testid="password"
                 required
                 type={values.showPassword ? "text" : "password"}
                 value={values.password}
@@ -150,6 +152,7 @@ const LoginForm = () => {
           </Grid>
           <Grid item xs={12}>
             <Button
+              data-testid="login-button"
               variant="contained"
               size="large"
               className={styles.buttonStyle}
@@ -160,6 +163,7 @@ const LoginForm = () => {
           </Grid>
           <Grid item xs={12}>
             <Button
+              data-testid="forgot-password-button"
               size="medium"
               className={styles.linkButtonStyle}
               onClick={handleForgotPasswordOpen}
@@ -171,6 +175,7 @@ const LoginForm = () => {
         <hr className={styles.hrMargin} />
         <Grid item xs={12}>
           <Button
+            data-testid="register-button"
             variant="contained"
             size="large"
             color="primary"
